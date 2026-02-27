@@ -44,7 +44,7 @@ See the [`skills-inject` README](https://github.com/lorisleiva/skills-inject) fo
 ```yaml
 ---
 heading: Shipping (Graphite)   # Optional, auto-derived from directory name
-priority: 10                   # Optional, default 0, higher = appears first
+priority: high                 # Optional: "high" | "normal" | "low", default "normal"
 ---
 
 - Always-on instruction bullet one.
