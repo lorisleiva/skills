@@ -6,10 +6,10 @@ A collection of reusable [Agent Skills](https://agentskills.io) for coding agent
 
 > All examples use `pnpx`. You can also use `npx skills@latest`.
 
-Browse the list below, then install the ones you need:
+Browse the list below, then install:
 
 ```sh
-pnpx skills add lorisleiva/skills --skill shipping-graphite --skill changesets
+pnpx skills add lorisleiva/skills
 ```
 
 This copies SKILL.md files into your project's `.claude/skills/` (or equivalent agent directory). Commit them to git so your entire team gets the skills.
