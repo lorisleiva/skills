@@ -17,6 +17,7 @@ Each skill is a directory under `skills/` containing:
 ---
 name: skill-name
 description: One or two sentences. Start with a verb. Explain what the skill does and when to use it.
+argument-hint: "[path] [--flag]"   # Optional, only for command skills. Shows usage hint to the user.
 allowed-tools: Bash(some-command)  # Optional, only if the skill needs specific tool permissions.
 ---
 ```
@@ -29,7 +30,7 @@ Every SKILL.md follows this structure:
 2. **One-sentence intro paragraph** — A single sentence summarizing the skill. Keep it to one sentence.
 3. **`## Key Rules`** — Hard constraints and safety guardrails as a flat bullet list. This section mirrors the INJECT.md content. Put the most important rules here — not buried in Guidelines or Command Process.
 4. **`## Guidelines`** — Detailed guidance organized with `###` sub-sections. Structure varies per skill but should use a single `## Guidelines` heading rather than multiple top-level `##` sections.
-5. **`## Command Process`** (optional) — For task-oriented skills that can be invoked as a command. Numbered steps prefixed with: "When invoked as a command, follow these steps:". Always-on skills (like the shipping skills) do not need this section.
+5. **`## Command Process`** (optional) — For task-oriented skills that can be invoked as a command. Numbered steps prefixed with: "When invoked as a command, follow these steps:". Always-on skills (like the shipping skills) do not need this section. Command skills should include a `### Arguments` sub-section listing accepted arguments, followed by a `### Steps` sub-section with the numbered process.
 
 ## INJECT.md Conventions
 

@@ -1,6 +1,7 @@
 ---
 name: ts-docblocks
 description: Add missing JSDoc docblocks to exported symbols in TypeScript projects. Use when writing new exports or when code is missing documentation.
+argument-hint: "[path] [--all]"
 ---
 
 # Add Missing Docblocks
@@ -140,6 +141,13 @@ export type InstructionPlan =
 ## Command Process
 
 When invoked as a command, follow these steps:
+
+### Arguments
+
+- `[path]` (optional): Narrow the scan to a specific path (e.g. `src/utils` or `packages/my-lib/src`).
+- `[--all]` (optional): Also scan non-exported items.
+
+### Steps
 
 1. If a path argument is provided, scan only that path; otherwise scan the entire repository.
 2. Look for TypeScript/JavaScript files (`.ts`, `.tsx`, `.js`, `.jsx`).

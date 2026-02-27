@@ -1,6 +1,7 @@
 ---
 name: ts-readme
 description: Guidelines for writing developer-friendly READMEs for TypeScript libraries. Use when creating a new package, changing a public API, or updating documentation.
+argument-hint: "[path]"
 ---
 
 # Create or Update README
@@ -96,6 +97,12 @@ When working in a monorepo:
 ## Command Process
 
 When invoked as a command, follow these steps:
+
+### Arguments
+
+- `[path]` (optional): Path to the README file or its parent directory. Defaults to `./README.md`.
+
+### Steps
 
 1. Determine the target README path:
     - If a path argument is provided and ends with `.md`, use it directly.

@@ -1,6 +1,7 @@
 ---
 name: changesets
 description: Generate a changeset file with a changelog entry for package releases. Use when a PR introduces user-facing changes that should trigger a version bump.
+argument-hint: "[patch|minor|major]"
 allowed-tools: Bash(npx changeset add --empty)
 ---
 
@@ -75,6 +76,12 @@ Not every breaking change needs a diff — use them when there's a clear before/
 ## Command Process
 
 When invoked as a command, follow these steps:
+
+### Arguments
+
+- `[patch|minor|major]` (optional): Override the bump level for all affected packages.
+
+### Steps
 
 1. **Determine the change source.** Check `git status` for uncommitted changes. If there are meaningful working tree changes, use those. Otherwise, use the latest commit(s) on the current branch (compared to the base branch from `.changeset/config.json`).
 2. **Identify which packages changed.** Look at which files were modified and map them to their nearest `package.json` to determine affected packages. Ignore changes that are not relevant to a changeset — e.g. typo fixes in comments, dependency version bumps in `package.json`, changes to CI config, docs-only changes in non-doc packages, etc. Use your judgement to filter out noise.

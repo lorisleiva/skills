@@ -18,13 +18,13 @@ npx skills add lorisleiva/skills --skill shipping-graphite --skill changesets
 
 ## Available Skills
 
-| Skill | Description |
-|---|---|
-| `shipping-graphite` | Graphite CLI workflow &mdash; `gt create`/`gt modify`, single commit per branch, stacked PRs. |
-| `shipping-git` | Standard Git + GitHub CLI workflow &mdash; branches, commits, `gh pr create`. |
-| `changesets` | Generate changeset files with changelog entries for package releases. |
-| `ts-docblocks` | TypeScript JSDoc conventions and a scanner for missing docblocks. |
-| `ts-readme` | Guidelines for writing developer-friendly TypeScript library READMEs. |
+| Skill | Command | Description |
+|---|---|---|
+| `shipping-graphite` | &mdash; | Graphite CLI workflow &mdash; `gt create`/`gt modify`, single commit per branch, stacked PRs. |
+| `shipping-git` | &mdash; | Standard Git + GitHub CLI workflow &mdash; branches, commits, `gh pr create`. |
+| `changesets` | `/changesets [patch\|minor\|major]` | Generate changeset files with changelog entries for package releases. |
+| `ts-docblocks` | `/ts-docblocks [path] [--all]` | TypeScript JSDoc conventions and a scanner for missing docblocks. |
+| `ts-readme` | `/ts-readme [path]` | Guidelines for writing developer-friendly TypeScript library READMEs. |
 
 ## INJECT.md
 
