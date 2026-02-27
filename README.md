@@ -6,51 +6,33 @@ A collection of reusable [Agent Skills](https://agentskills.io) for coding agent
 
 > All examples use `pnpx`. You can also use `npx skills@latest`.
 
-```sh
-pnpx skills add lorisleiva/skills
-```
-
-This copies SKILL.md files into your project's `.claude/skills/` (or equivalent agent directory). Commit them to git so your entire team gets the skills.
-
-To install specific skills:
+Browse the list below, then install the ones you need:
 
 ```sh
 pnpx skills add lorisleiva/skills --skill shipping-graphite --skill changesets
 ```
 
+This copies SKILL.md files into your project's `.claude/skills/` (or equivalent agent directory). Commit them to git so your entire team gets the skills.
+
 ## Available Skills
 
-| Skill | Command | Description |
-|---|---|---|
-| `shipping-graphite` | &mdash; | Graphite CLI workflow &mdash; `gt create`/`gt modify`, single commit per branch, stacked PRs. |
-| `shipping-git` | &mdash; | Standard Git + GitHub CLI workflow &mdash; branches, commits, `gh pr create`. |
-| `changesets` | `/changesets [patch\|minor\|major]` | Generate changeset files with changelog entries for package releases. |
-| `ts-docblocks` | `/ts-docblocks [path] [--all]` | TypeScript JSDoc conventions and a scanner for missing docblocks. |
-| `ts-readme` | `/ts-readme [path]` | Guidelines for writing developer-friendly TypeScript library READMEs. |
+| Skill | Description |
+|---|---|
+| `shipping-graphite` | Graphite CLI workflow &mdash; `gt create`/`gt modify`, single commit per branch, stacked PRs. |
+| `shipping-git` | Standard Git + GitHub CLI workflow &mdash; branches, commits, `gh pr create`. |
+| `changesets` | Generate changeset files with changelog entries for package releases. <br> Command: `/changesets [patch\|minor\|major]` |
+| `ts-docblocks` | TypeScript JSDoc conventions and a scanner for missing docblocks. <br> Command: `/ts-docblocks [path] [--all]` |
+| `ts-readme` | Guidelines for writing developer-friendly TypeScript library READMEs. <br> Command: `/ts-readme [path]` |
 
-## INJECT.md
+## Always-on Context
 
-Each skill can include an optional `INJECT.md` file containing a short summary meant to be injected into your `CLAUDE.md` or `AGENTS.md` as always-on context. The agent doesn't need to load the full skill to follow these instructions.
-
-Use [`skills-inject`](https://github.com/lorisleiva/skills-inject) to extract `INJECT.md` content and write it into your instruction files:
+Each skill includes a short summary (`INJECT.md`) of its most important rules. Use [`skills-inject`](https://github.com/lorisleiva/skills-inject) to write these summaries directly into your `CLAUDE.md` or `AGENTS.md`, so the agent follows them every turn without needing to load the full skill.
 
 ```sh
 pnpx skills-inject
 ```
 
-See the [`skills-inject` README](https://github.com/lorisleiva/skills-inject) for full usage.
-
-### INJECT.md Format
-
-```yaml
----
-heading: Shipping (Graphite)   # Optional, auto-derived from directory name
-priority: high                 # Optional: "high" | "normal" | "low", default "normal"
----
-
-- Always-on instruction bullet one.
-- Always-on instruction bullet two.
-```
+See the [`skills-inject` README](https://github.com/lorisleiva/skills-inject) for configuration and full usage.
 
 ## Variants
 
