@@ -25,7 +25,6 @@ npx skills add lorisleiva/skills --skill shipping-graphite --skill changesets
 | `changesets` | Generate changeset files with changelog entries for package releases. |
 | `ts-docblocks` | TypeScript JSDoc conventions and a scanner for missing docblocks. |
 | `ts-readme` | Guidelines for writing developer-friendly TypeScript library READMEs. |
-| `review-gate` | Human approval gate &mdash; requires review before any git operation. |
 
 ## INJECT.md
 
@@ -53,10 +52,7 @@ priority: high                 # Optional: "high" | "normal" | "low", default "n
 
 ## Variants
 
-Some skills are variants of the same concept:
-
-- **`shipping-graphite`** and **`shipping-git`** are two approaches to shipping code. Install the one that matches your workflow.
-- **`review-gate`** is complementary to either shipping skill. It adds an approval gate before any git operation.
+**`shipping-graphite`** and **`shipping-git`** are two approaches to shipping code. Install the one that matches your workflow.
 
 ## Contributing
 

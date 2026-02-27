@@ -7,16 +7,17 @@ description: Guidelines for writing developer-friendly READMEs for TypeScript li
 
 Create a new README or update an existing one for a TypeScript package, library, or project.
 
-A deep understanding of the project is necessary to create an effective README. Analyze the codebase, key features, and typical usage patterns to inform the content. If the project relies on other libraries or frameworks, consider how those influence usage and installation.
-
 ## Key Rules
 
 - When adding a new public API, add or update the package's README.
 - Structure: brief intro, installation, usage (with code snippet), deep-dive sections.
 - Code snippets must be realistic, concise, and use TypeScript syntax.
 - Focus on the quickest path to success. Developers should feel excited, not overwhelmed.
+- Do NOT update any real code outside of the README file itself. If you identify errors in the codebase, warn the user but do not fix them.
 
-## README Guidelines
+## Guidelines
+
+A deep understanding of the project is necessary to create an effective README. Analyze the codebase, key features, and typical usage patterns to inform the content. If the project relies on other libraries or frameworks, consider how those influence usage and installation.
 
 ### Structure
 
@@ -92,7 +93,9 @@ When working in a monorepo:
 - **Root README**: Provides an overview of the entire monorepo, links to individual package READMEs for details. Focus on the quick-start experience rather than deep-diving into each package.
 - **Consistency**: When updating a package README, check other package READMEs for structural consistency (heading levels, section order, code example style).
 
-## Process
+## Command Process
+
+When invoked as a command, follow these steps:
 
 1. Determine the target README path:
     - If a path argument is provided and ends with `.md`, use it directly.
@@ -120,4 +123,3 @@ When working in a monorepo:
     - Include realistic code snippets throughout.
 
 5. Present the complete README for review before applying changes.
-6. Do not update any real code outside of the README file itself! If you identify errors in the codebase, warn the user about them but do not fix them.

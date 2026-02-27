@@ -14,8 +14,11 @@ Scan the specified path (or entire repository if no path given) and add missing 
 - Begin with a clear one-to-two line summary. Add a blank line before tags.
 - Include `@param`, `@typeParam`, `@return`, `@throws`, and at least one `@example` when helpful.
 - Use `{@link ...}` to reference related items. Add `@see` tags at the end for related APIs.
+- Do NOT modify real code outside of docblocks. Do NOT modify existing docblocks.
 
-## Docblock Style Guidelines
+## Guidelines
+
+### Style
 
 Use JSDoc format with the following conventions:
 
@@ -37,7 +40,7 @@ Use JSDoc format with the following conventions:
 - Use `{@link ...}` tags to reference other items in the codebase when relevant.
 - Add `@see` tags at the very end when applicable to point to other related items or documentation. Use `@see {@link ...}` format when linking to other code items.
 
-## Examples of Good Docblocks
+### Examples
 
 ````ts
 /**
@@ -134,7 +137,9 @@ export type InstructionPlan =
     | SingleInstructionPlan;
 ````
 
-## Process
+## Command Process
+
+When invoked as a command, follow these steps:
 
 1. If a path argument is provided, scan only that path; otherwise scan the entire repository.
 2. Look for TypeScript/JavaScript files (`.ts`, `.tsx`, `.js`, `.jsx`).
@@ -145,9 +150,8 @@ export type InstructionPlan =
     - `export type`
     - `export const` (for constants and arrow functions)
 4. If `--all` is passed, also identify non-exported items.
-5. Do NOT modify real code outside of docblocks! Do NOT modify existing docblocks!
-6. For each item missing a docblock:
+5. For each item missing a docblock:
     - Analyze the code to understand its purpose (this may span multiple files).
     - Examine parameters, return types, and behavior.
     - Generate an appropriate docblock following the style guide.
-7. Present all changes clearly, grouped by file. Apply all changes without requiring further approval.
+6. Present all changes clearly, grouped by file. Apply all changes without requiring further approval.

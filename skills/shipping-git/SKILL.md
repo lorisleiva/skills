@@ -1,20 +1,21 @@
 ---
 name: shipping-git
-description: Shipping workflow using standard Git and GitHub CLI. Provides always-on guidance for committing, branching, and creating PRs.
+description: Shipping workflow using standard Git and GitHub CLI. Provides guidance for committing, branching, and creating PRs.
 ---
 
-# Shipping Workflow (Git)
+# Ship Code Using Git
 
-Always-on guidance for shipping code using standard Git and the GitHub CLI (`gh`). This skill teaches the agent how to create commits, branches, and pull requests following conventional workflows.
+Guidance for shipping code using standard Git and the GitHub CLI (`gh`). This skill teaches the agent how to create commits, branches, and pull requests following conventional workflows.
 
 ## Key Rules
 
 - NEVER commit, push, create branches, or create PRs without explicit user approval.
 - Before any git operation that creates or modifies a commit, present a review block containing: changeset content (if applicable), commit title, and commit/PR description. ALWAYS wait for approval.
+- Present changeset file contents for review before writing them.
 - Use standard `git add` and `git commit` workflows. Concise title on the first line, blank line, then description body.
 - Use `gh pr create` for pull requests. Start PR descriptions with "This PR...".
 
-## Git Workflow Details
+## Guidelines
 
 ### Creating Commits
 

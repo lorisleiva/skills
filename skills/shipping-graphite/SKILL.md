@@ -1,22 +1,23 @@
 ---
 name: shipping-graphite
-description: Shipping workflow using Graphite CLI. Provides always-on guidance for committing, branching, and creating PRs with Graphite's single-commit-per-branch model.
+description: Shipping workflow using Graphite CLI. Provides guidance for committing, branching, and creating PRs with Graphite's single-commit-per-branch model.
 ---
 
-# Shipping Workflow (Graphite)
+# Ship Code Using Graphite
 
-Always-on guidance for shipping code using the [Graphite](https://graphite.dev/) CLI (`gt`). This skill teaches the agent how to create commits, branches, and PRs using Graphite's single-commit-per-branch model.
+Guidance for shipping code using the [Graphite](https://graphite.dev/) CLI (`gt`). This skill teaches the agent how to create commits, branches, and PRs using Graphite's single-commit-per-branch model.
 
 ## Key Rules
 
 - NEVER commit, push, create branches, or create PRs without explicit user approval.
 - Before any git operation that creates or modifies a commit, present a review block containing: changeset content (if applicable), commit title, and commit/PR description. ALWAYS wait for approval.
+- Present changeset file contents for review before writing them.
 - Use `gt create -am "Title" -m "Description body"` for new PRs. The first `-m` sets the commit title; the second sets the PR description.
 - Use `gt modify -a` to amend the current branch with follow-up changes (NEVER create additional commits on the same branch).
-- Escape backticks in commit messages with backslashes for shell compatibility (e.g. `"Update \`my-package\` config"`).
+- ALWAYS escape backticks in commit messages with backslashes for shell compatibility (e.g. `"Update \`my-package\` config"`).
 - Start PR descriptions with "This PR...".
 
-## Graphite Workflow Details
+## Guidelines
 
 ### Creating a New PR
 

@@ -16,16 +16,12 @@ Create a new changeset file for the current project using the [changesets CLI](h
 - While a project is pre-1.0, `minor` bumps may be treated as breaking.
 - ALWAYS use `npx changeset add --empty` to generate a new changeset file with a random name. NEVER create changeset files manually.
 - No changeset needed for: docs-only changes, CI config, dev dependency updates, test-only changes.
+- Do NOT modify any existing changeset files.
+- Only create one new changeset file per invocation.
 
-## Process
+## Guidelines
 
-1. **Determine the change source.** Check `git status` for uncommitted changes. If there are meaningful working tree changes, use those. Otherwise, use the latest commit(s) on the current branch (compared to the base branch from `.changeset/config.json`).
-2. **Identify which packages changed.** Look at which files were modified and map them to their nearest `package.json` to determine affected packages. Ignore changes that are not relevant to a changeset — e.g. typo fixes in comments, dependency version bumps in `package.json`, changes to CI config, docs-only changes in non-doc packages, etc. Use your judgement to filter out noise.
-3. **Run `npx changeset add --empty`** to generate a new changeset file with a random name.
-4. **Identify the newly created file** — it will be the most recently created `.md` file in `.changeset/` (excluding `README.md`).
-5. **Write the changeset file** with the proper frontmatter listing each affected package and the bump level, followed by the changelog entry.
-
-## Changeset Format
+### Changeset Format
 
 ```
 ---
@@ -36,14 +32,14 @@ Create a new changeset file for the current project using the [changesets CLI](h
 <concise changelog entry>
 ```
 
-## Changelog Guidelines
+### Changelog Entries
 
 - Write a concise but informative changelog entry (1-3 sentences).
 - Start with a verb — e.g. "Add", "Remove", "Replace", "Fix", "Update".
 - Focus on what changed from the user's perspective, not implementation details.
 - Mention renamed or removed APIs explicitly.
 
-## Breaking Changes
+### Breaking Changes
 
 Add a `**BREAKING CHANGES**` section (bold paragraph, not a header) after the changelog entry when:
 
@@ -76,7 +72,12 @@ Replace the `useGranularImports` boolean option with a new `importStrategy` opti
 
 Not every breaking change needs a diff — use them when there's a clear before/after code change to show. For type removals or behavioral changes, a text explanation is sufficient.
 
-## Important
+## Command Process
 
-- Do NOT modify any existing changeset files.
-- Only create one new changeset file per invocation.
+When invoked as a command, follow these steps:
+
+1. **Determine the change source.** Check `git status` for uncommitted changes. If there are meaningful working tree changes, use those. Otherwise, use the latest commit(s) on the current branch (compared to the base branch from `.changeset/config.json`).
+2. **Identify which packages changed.** Look at which files were modified and map them to their nearest `package.json` to determine affected packages. Ignore changes that are not relevant to a changeset — e.g. typo fixes in comments, dependency version bumps in `package.json`, changes to CI config, docs-only changes in non-doc packages, etc. Use your judgement to filter out noise.
+3. **Run `npx changeset add --empty`** to generate a new changeset file with a random name.
+4. **Identify the newly created file** — it will be the most recently created `.md` file in `.changeset/` (excluding `README.md`).
+5. **Write the changeset file** with the proper frontmatter listing each affected package and the bump level, followed by the changelog entry.
