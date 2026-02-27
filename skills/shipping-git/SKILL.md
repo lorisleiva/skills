@@ -13,7 +13,7 @@ Guidance for shipping code using standard Git and the GitHub CLI (`gh`). This sk
 - Before any git operation that creates or modifies a commit, present a review block containing: changeset content (if applicable), commit title, and commit/PR description. ALWAYS wait for approval.
 - Present changeset file contents for review before writing them.
 - Use standard `git add` and `git commit` workflows. Concise title on the first line, blank line, then description body.
-- Use `gh pr create` for pull requests. Start PR descriptions with "This PR...".
+- Use `gh pr create` for pull requests.
 
 ## Guidelines
 
@@ -45,19 +45,10 @@ Common prefixes: `feature/`, `fix/`, `refactor/`, `docs/`, `chore/`.
 Use the GitHub CLI to create PRs:
 
 ```sh
-gh pr create --title "PR title" --body "$(cat <<'EOF'
-## Summary
-
-This PR adds/fixes/updates...
-
-- Bullet point describing a change.
-- Another change.
-EOF
-)"
+gh pr create --title "PR title" --body "Description explaining what changed and why."
 ```
 
-- Start PR descriptions with "This PR...".
-- Use a `## Summary` section with concise bullet points.
+- If a `.github/PULL_REQUEST_TEMPLATE.md` exists, use it as a guide for structuring the PR description. Fill in sections that are relevant and omit sections that don't apply (e.g. don't add "Fixes #" if there's no related issue).
 
 ### Pushing Changes
 

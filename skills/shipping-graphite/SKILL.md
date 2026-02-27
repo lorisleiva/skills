@@ -15,7 +15,6 @@ Guidance for shipping code using the [Graphite](https://graphite.dev/) CLI (`gt`
 - Use `gt create -am "Title" -m "Description body"` for new PRs. The first `-m` sets the commit title; the second sets the PR description.
 - Use `gt modify -a` to amend the current branch with follow-up changes (NEVER create additional commits on the same branch).
 - ALWAYS escape backticks in commit messages with backslashes for shell compatibility (e.g. `"Update \`my-package\` config"`).
-- Start PR descriptions with "This PR...".
 
 ## Guidelines
 
@@ -30,6 +29,7 @@ gt create -am "Commit title" -m "Description body explaining what changed and wh
 - The first `-m` flag sets the commit title (first line of the commit message).
 - The second `-m` flag sets the commit body, which Graphite uses as the PR description when the stack is submitted.
 - Write the body as a concise flowing summary. Avoid excessive blank lines.
+- If a `.github/PULL_REQUEST_TEMPLATE.md` exists, use it as a guide for structuring the PR description. Fill in sections that are relevant and omit sections that don't apply (e.g. don't add "Fixes #" if there's no related issue).
 
 ### Amending an Existing PR
 
