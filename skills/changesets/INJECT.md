@@ -2,7 +2,7 @@
 heading: Changesets
 ---
 
-- Any PR that should trigger a package release must include a changeset.
+- Any PR that should trigger a package release MUST include a changeset.
 - Identify affected packages by mapping changed files to their nearest `package.json`.
 - Choose the right bump: `patch` for fixes, `minor` for features, `major` for breaking changes.
 - While a project is pre-1.0, `minor` bumps may be treated as breaking.
