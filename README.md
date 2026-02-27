@@ -20,9 +20,9 @@ This copies SKILL.md files into your project's `.claude/skills/` (or equivalent 
 |---|---|
 | `shipping-graphite` | Graphite CLI workflow &mdash; `gt create`/`gt modify`, single commit per branch, stacked PRs. |
 | `shipping-git` | Standard Git + GitHub CLI workflow &mdash; branches, commits, `gh pr create`. |
-| `changesets` | Generate changeset files with changelog entries for package releases. <br> Command: `/changesets [patch\|minor\|major]` |
-| `ts-docblocks` | TypeScript JSDoc conventions and a scanner for missing docblocks. <br> Command: `/ts-docblocks [path] [--all]` |
-| `ts-readme` | Guidelines for writing developer-friendly TypeScript library READMEs. <br> Command: `/ts-readme [path]` |
+| `changesets` | Generate changeset files with changelog entries for package releases. <br> _Command: `/changesets [patch\|minor\|major]`_ |
+| `ts-docblocks` | TypeScript JSDoc conventions and a scanner for missing docblocks. <br> _Command: `/ts-docblocks [path] [--all]`_ |
+| `ts-readme` | Guidelines for writing developer-friendly TypeScript library READMEs. <br> _Command: `/ts-readme [path]`_ |
 
 ## Always-on Context
 
