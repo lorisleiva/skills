@@ -9,10 +9,10 @@ Always-on guidance for shipping code using the [Graphite](https://graphite.dev/)
 
 ## Key Rules
 
-- **Never commit, push, create branches, or create PRs without explicit user approval.**
-- Before any git operation that creates or modifies a commit, present a review block containing: changeset content (if applicable), commit title, and commit/PR description. Wait for approval.
+- NEVER commit, push, create branches, or create PRs without explicit user approval.
+- Before any git operation that creates or modifies a commit, present a review block containing: changeset content (if applicable), commit title, and commit/PR description. ALWAYS wait for approval.
 - Use `gt create -am "Title" -m "Description body"` for new PRs. The first `-m` sets the commit title; the second sets the PR description.
-- Use `gt modify -a` to amend the current branch with follow-up changes (never create additional commits on the same branch).
+- Use `gt modify -a` to amend the current branch with follow-up changes (NEVER create additional commits on the same branch).
 - Escape backticks in commit messages with backslashes for shell compatibility (e.g. `"Update \`my-package\` config"`).
 - Start PR descriptions with "This PR...".
 
@@ -32,13 +32,13 @@ gt create -am "Commit title" -m "Description body explaining what changed and wh
 
 ### Amending an Existing PR
 
-When making follow-up changes to the current branch, always amend rather than creating new commits:
+When making follow-up changes to the current branch, ALWAYS amend rather than creating new commits:
 
 ```sh
 gt modify -a
 ```
 
-This amends the single commit on the current branch. Since Graphite uses a one-commit-per-branch model, always use `gt modify -a` for follow-up changes on the same PR.
+This amends the single commit on the current branch. Since Graphite uses a one-commit-per-branch model, ALWAYS use `gt modify -a` for follow-up changes on the same PR.
 
 ### Submitting PRs
 

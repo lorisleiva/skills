@@ -9,7 +9,7 @@ Scan the specified path (or entire repository if no path given) and add missing 
 
 ## Key Rules
 
-- All exported functions, types, interfaces, and constants must have JSDoc docblocks.
+- All exported functions, types, interfaces, and constants MUST have JSDoc docblocks.
 - Start with `/**`, use `*` prefix for each line, end with `*/` — each on its own line.
 - Begin with a clear one-to-two line summary. Add a blank line before tags.
 - Include `@param`, `@typeParam`, `@return`, `@throws`, and at least one `@example` when helpful.
@@ -145,7 +145,7 @@ export type InstructionPlan =
     - `export type`
     - `export const` (for constants and arrow functions)
 4. If `--all` is passed, also identify non-exported items.
-5. Do not modify real code outside of docblocks! Do not modify existing docblocks!
+5. Do NOT modify real code outside of docblocks! Do NOT modify existing docblocks!
 6. For each item missing a docblock:
     - Analyze the code to understand its purpose (this may span multiple files).
     - Examine parameters, return types, and behavior.
