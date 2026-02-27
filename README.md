@@ -4,8 +4,10 @@ A collection of reusable [Agent Skills](https://agentskills.io) for coding agent
 
 ## Install
 
+> All examples use `pnpx`. You can also use `npx skills@latest`.
+
 ```sh
-npx skills add lorisleiva/skills
+pnpx skills add lorisleiva/skills
 ```
 
 This copies SKILL.md files into your project's `.claude/skills/` (or equivalent agent directory). Commit them to git so your entire team gets the skills.
@@ -13,7 +15,7 @@ This copies SKILL.md files into your project's `.claude/skills/` (or equivalent 
 To install specific skills:
 
 ```sh
-npx skills add lorisleiva/skills --skill shipping-graphite --skill changesets
+pnpx skills add lorisleiva/skills --skill shipping-graphite --skill changesets
 ```
 
 ## Available Skills
@@ -33,7 +35,7 @@ Each skill can include an optional `INJECT.md` file containing a short summary m
 Use [`skills-inject`](https://github.com/lorisleiva/skills-inject) to extract `INJECT.md` content and write it into your instruction files:
 
 ```sh
-npx skills-inject
+pnpx skills-inject
 ```
 
 See the [`skills-inject` README](https://github.com/lorisleiva/skills-inject) for full usage.
