@@ -43,13 +43,11 @@ This amends the single commit on the current branch. Since Graphite uses a one-c
 
 ### Submitting PRs
 
-After creating or modifying branches, submit the stack:
+Do NOT run `gt submit` (or `gt ss`) after creating or modifying branches. The `gt create` and `gt modify` steps are the end of the workflow unless the user explicitly asks to submit or push.
 
-```sh
-gt submit
-```
+When the user asks to submit, first run `gt sync` to ensure the local stack is up-to-date. This will restack branches from the main branch and prompt to delete any stale (merged) branches. If `gt sync` encounters any issues or conflicts, stop immediately and report the problem to the user before proceeding — await their instructions on how to resolve it.
 
-This creates or updates PRs for all branches in the current stack.
+Only after a clean sync, run `gt submit` to create or update PRs for all branches in the current stack.
 
 ### Shell Escaping
 

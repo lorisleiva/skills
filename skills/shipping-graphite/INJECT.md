@@ -7,3 +7,4 @@ heading: Shipping (Graphite)
 - Use `gt create -am "Title" -m "Description body"` for new PRs. The first `-m` sets the commit title; the second sets the PR description.
 - Use `gt modify -a` to amend the current branch with follow-up changes (NEVER create additional commits on the same branch).
 - ALWAYS escape backticks in commit messages with backslashes for shell compatibility (e.g. `"Update \`my-package\` config"`).
+- Do NOT run `gt submit` after committing. Only run it when the user explicitly asks to submit or push.
