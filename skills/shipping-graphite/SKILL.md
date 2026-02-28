@@ -11,7 +11,7 @@ Guidance for shipping code using the [Graphite](https://graphite.dev/) CLI (`gt`
 
 - NEVER commit, push, create branches, or create PRs without explicit user approval.
 - Before any git operation that creates or modifies a commit, present a review block containing: changeset content (if applicable), commit title, and commit/PR description. ALWAYS wait for approval.
-- Present changeset file contents for review before writing them.
+- Show the proposed changeset entry for review before writing the changeset file.
 - Use `gt create -am "Title" -m "Description body"` for new PRs. The first `-m` sets the commit title; the second sets the PR description.
 - Use `gt modify -a` to amend the current branch with follow-up changes (NEVER create additional commits on the same branch).
 - ALWAYS escape backticks in commit messages with backslashes for shell compatibility (e.g. `"Update \`my-package\` config"`).
@@ -61,6 +61,6 @@ gt create -am "Align \`kit-plugins\` infrastructure" -m "This PR updates the sha
 
 Before any git operation, present this review block and wait for approval:
 
-1. **Changeset content** (if applicable) — the full changeset file contents.
+1. **Changeset entry** (if applicable) — the proposed changelog entry and bump type.
 2. **Commit title** — a concise title for the commit.
 3. **Commit/PR description** — a short description that explains what changed and why.
